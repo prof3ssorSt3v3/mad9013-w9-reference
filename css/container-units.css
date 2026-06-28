@@ -1,0 +1,72 @@
+/* ---------- New Units Basics ---------- */
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* cqw & cqi */
+
+.grid--cqi {
+  grid-template-columns: 1fr 2fr 3fr;
+}
+
+/* cqh & cqb */
+
+.grid--cqb {
+  grid-template-rows: 1fr 2fr 3fr;
+  height: 40rem;
+}
+
+/* ---------- Subscribe example ---------- */
+
+.subscribe-example .container {
+  display: grid;
+  gap: 1.5rem;
+  container-name: outer;
+  container-type: inline-size;
+}
+
+@media only screen and (min-width: 45em) {
+  .subscribe-example .container {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.content,
+.sidebar {
+  container-type: inline-size;
+}
+
+.subscribe {
+  padding: 1.5rem;
+  background-color: var(--color-green--lighter);
+  border-radius: var(--radius);
+  margin-block-end: 1.5rem;
+}
+
+.subscribe .subscribe__title {
+  font-size: 1.5rem;
+}
+
+@container (min-width: 30em) {
+  .subscribe {
+    background-color: var(--color-red);
+    color: #fff;
+  }
+
+  .subscribe .subscribe__title {
+    color: #fff;
+    font-size: 2.5rem;
+  }
+}
+
+@container outer (min-width: 50em) {
+  .subscribe {
+    background-color: var(--color-purple);
+  }
+
+  .subscribe .subscribe__title {
+    color: #fff;
+  }
+}

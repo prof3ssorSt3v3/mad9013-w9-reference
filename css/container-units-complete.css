@@ -1,0 +1,92 @@
+/* ---------- New Units Basics ---------- */
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* cqw & cqi */
+
+.grid--cqi {
+  grid-template-columns: 1fr 2fr 3fr;
+}
+
+.grid--cqi .col {
+  container-type: inline-size;
+}
+
+.grid--cqi .box {
+  font-size: 10cqi;
+}
+
+/* cqh & cqb */
+
+.grid--cqb {
+  grid-template-rows: 1fr 2fr 3fr;
+  height: 40rem;
+}
+
+.grid--cqb .col {
+  display: flex;
+}
+
+.grid--cqb .col {
+  container-type: size;
+}
+
+.grid--cqb .box {
+  width: 100%;
+  font-size: 20cqb;
+}
+
+/* ---------- Subscribe example ---------- */
+
+.subscribe-example .container {
+  display: grid;
+  gap: 1.5rem;
+  container-name: outer;
+  container-type: inline-size;
+}
+
+@media only screen and (min-width: 45em) {
+  .subscribe-example .container {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.content,
+.sidebar {
+  container-type: inline-size;
+}
+
+.subscribe {
+  padding: 1.5rem;
+  background-color: var(--color-green--lighter);
+  border-radius: var(--radius);
+  margin-block-end: 1.5rem;
+}
+
+.subscribe .subscribe__title {
+  font-size: clamp(1.424rem, 5cqi, 2.369rem);
+}
+
+@container (min-width: 30rem) {
+  .subscribe {
+    background-color: var(--color-red);
+    color: #fff;
+  }
+
+  .subscribe .subscribe__title {
+    color: #fff;
+  }
+}
+
+@container outer (min-width: 50rem) {
+  .subscribe {
+    background-color: var(--color-purple);
+  }
+
+  .subscribe .subscribe__title {
+    color: #fff;
+  }
+}

@@ -1,0 +1,103 @@
+/* ---------- Card Styles ---------- */
+
+.card {
+  display: block;
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: var(--color-primary);
+  transition: all var(--transition);
+}
+
+.card__img img {
+  width: 100%;
+}
+
+.card__content {
+  padding: 1rem;
+}
+
+.card__title {
+  font-size: 1.266rem;
+  color: var(--color-primary);
+}
+
+@container (min-width: 35em) {
+  .card {
+    display: flex;
+  }
+
+  .card__img {
+    flex: 1;
+  }
+  .card__content {
+    flex: 2;
+  }
+
+  .card__content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .card__title {
+    font-size: 1.563rem;
+  }
+
+  .card__text {
+    flex-grow: 1;
+  }
+}
+
+@container (min-width: 40em) {
+  .card__content {
+    flex: 1;
+  }
+}
+
+/* ---------- Flex ---------- */
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.flex .col {
+  /*
+  Sizing this is necessary because without sizing
+  flex children, everything gets compressed down
+  to having no width.
+  */
+  flex: 1 1 15rem;
+  container-type: inline-size;
+}
+
+/* .flex .card {
+  flex: 1 1 15rem;
+} */
+
+/* ---------- Grid ---------- */
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.grid .col {
+  container-type: inline-size;
+}
+
+@media only screen and (min-width: 45em) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 60em) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

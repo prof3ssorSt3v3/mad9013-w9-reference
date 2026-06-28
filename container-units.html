@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Ensures that the text characters are displayed properly -->
+    <meta charset="UTF-8" />
+
+    <!-- Properly sizes content across different browser window sizes -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--
+      The site title displayed in the browser tab.
+      Also used for Search Engine Optimization (SEO),
+      Google results, and accessibility tools/screen readers.
+    -->
+    <title>Container Units | W9 - Container Queries, a Game Changer</title>
+
+    <!-- Loads fonts from Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <!-- Loads custom supporting CSS stylesheet(s) -->
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <!-- Loads lesson specific CSS stylesheet -->
+    <link rel="stylesheet" href="./css/container-units-complete.css" />
+
+    <!-- Loads Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" />
+  </head>
+  <body id="page" class="css-grid">
+    <!--
+      Accessibility feature that allows users to
+      quickly skip to key areas on the page.
+    -->
+    <ul class="skip-links">
+      <li>
+        <a class="skip-links__link" href="#nav">Skip to site navigation</a>
+      </li>
+      <li>
+        <a class="skip-links__link" href="#main">Skip to main content</a>
+      </li>
+    </ul>
+
+    <!--
+      Main site header. Features our site logo and navigation.
+    -->
+    <header class="navbar">
+      <div class="container">
+        <strong class="navbar__headline">
+          <a href="/" class="navbar__logo">
+            <span class="navbar__week">Week 9</span>
+            <span class="navbar__title">Container Queries</span>
+          </a>
+        </strong>
+        <button class="navbar__toggle" aria-label="Click to open mobile navigation">
+          <span class="navbar__tog navbar__tog--top"></span>
+          <span class="navbar__tog navbar__tog--middle"></span>
+          <span class="navbar__tog navbar__tog--bottom"></span>
+        </button>
+        <nav id="nav" class="navbar__nav">
+          <ul class="navbar__list">
+            <li>
+              <a href="./basics.html" class="navbar__link"> Basics </a>
+            </li>
+            <li>
+              <a href="./flex-and-grid.html" class="navbar__link"> Flex & Grid </a>
+            </li>
+            <li>
+              <a href="./container-units.html" class="navbar__link" aria-current="page"> Container Units </a>
+            </li>
+            <li>
+              <a href="./layouts.html" class="navbar__link"> Layouts </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!--
+      The main contains ALL of the content unique to this page.
+      Every page MUST have exactly one `main` that is a direct child of `body`.
+    -->
+    <main id="main">
+      <header class="banner">
+        <div class="container">
+          <div class="container--text">
+            <h1 class="banner__headline">Container Units</h1>
+            <div class="banner__byline">
+              <p>
+                With Container Queries comes a set of new units:
+                <code>cqw</code>, <code>cqh</code>, <code>cqi</code>, <code>cqb</code>, <code>cqmin</code>, and <code>cqmax</code>. These new units work a lot like <code>vw</code>, <code>vh</code>,
+                etc. except their sizes is 1% of the container query, not the viewport.
+              </p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- 
+        ====================================================
+        ============== TUTORIAL CONTENT START ==============
+        ====================================================
+      -->
+
+      <section>
+        <div class="container">
+          <h2>New Units Basics</h2>
+
+          <h3><code>cqw</code> & <code>cqi</code></h3>
+          <div class="parent grid grid--cqi">
+            <div class="col">
+              <div class="box">Box</div>
+            </div>
+            <div class="col">
+              <div class="box">Box</div>
+            </div>
+            <div class="col">
+              <div class="box">Box</div>
+            </div>
+          </div>
+
+          <h3><code>cqh</code> & <code>cqb</code></h3>
+          <div class="parent grid grid--cqb">
+            <div class="col">
+              <div class="box">Box</div>
+            </div>
+            <div class="col">
+              <div class="box">Box</div>
+            </div>
+            <div class="col">
+              <div class="box">Box</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="subscribe-example">
+        <div class="container">
+          <div class="content">
+            <h2>A Great Sales Pitch!</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus repellendus nihil commodi unde id veniam illum? Praesentium odio eos, est at libero enim assumenda placeat vero,
+              cupiditate ipsa nulla ad?
+            </p>
+            <p>
+              Non omnis fuga facere laboriosam blanditiis nisi optio qui distinctio in aliquam, et earum esse consequuntur laudantium quia excepturi voluptate sint maiores dolorum ratione. Debitis
+              repellat deleniti atque provident quam?
+            </p>
+            <p>
+              Reprehenderit non incidunt labore quo accusantium, sed assumenda. Consequatur, corrupti ut iste quaerat dolores sapiente earum! Molestias laudantium adipisci sint? Quaerat recusandae
+              aliquid sed nulla placeat doloremque alias accusamus tenetur?
+            </p>
+            <p>
+              Dolorem consectetur, amet quisquam atque ab perspiciatis possimus maxime voluptates in voluptatum reprehenderit rem. Quos minus, enim totam laudantium sequi eos unde asperiores
+              provident? Ipsam iste assumenda blanditiis cumque fuga.
+            </p>
+            <p>
+              Voluptates ratione ut ducimus maxime odio minus nam! Reiciendis vel enim doloribus quia minus minima voluptatibus autem officiis explicabo cupiditate praesentium ex, deleniti aperiam
+              placeat cumque mollitia? Maiores, nesciunt veniam.
+            </p>
+            <p>
+              Inventore libero distinctio quas harum adipisci dolorem vero aliquid earum? Sunt, sapiente ut maxime nostrum dicta, deleniti quo consequuntur fuga, nihil odio officia optio officiis
+              placeat tempora delectus ullam reprehenderit.
+            </p>
+            <p>
+              Libero voluptates nisi harum quae quidem vitae officiis facilis provident ducimus voluptatibus repellendus, rerum vel cum hic nam exercitationem ab dolorem praesentium ratione, odit
+              minus tempora soluta quo? Ad, nobis!
+            </p>
+            <div class="subscribe">
+              <h3 class="subscribe__title">Subscribe to Our Newsletter</h3>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt voluptas excepturi adipisci neque asperiores maiores quibusdam rerum odio porro consequuntur.</p>
+              <a href="#" class="btn">Subscribe!</a>
+            </div>
+            <p>
+              Sequi repudiandae dicta dolorum a nihil porro autem minus. Repellat quos odit doloremque fugiat officiis magni qui dolorem obcaecati adipisci rem. Expedita doloremque earum itaque quae
+              error molestiae facere debitis.
+            </p>
+            <p>
+              Optio doloribus sint et ab nisi ipsam modi repellendus itaque provident. Quisquam minima sint necessitatibus repellat fugiat vel nostrum aspernatur aliquid ipsa maxime, quaerat
+              reiciendis fugit hic deleniti recusandae molestiae.
+            </p>
+            <p>
+              Asperiores reprehenderit perspiciatis nulla rem magni voluptas incidunt saepe similique distinctio obcaecati, odit provident, deserunt blanditiis tempora, cupiditate facere aut inventore
+              in reiciendis cumque ullam illo nesciunt? Quaerat, porro voluptas.
+            </p>
+          </div>
+
+          <div class="sidebar">
+            <div class="subscribe">
+              <h3 class="subscribe__title">Subscribe to Our Newsletter</h3>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt voluptas excepturi adipisci neque asperiores maiores quibusdam rerum odio porro consequuntur.</p>
+              <a href="#" class="btn">Subscribe!</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 
+        ====================================================
+        =============== TUTORIAL CONTENT END ===============
+        ====================================================
+      -->
+    </main>
+
+    <!--
+      Site footer. Contains site logo and legal info.
+      
+      Could also contain other concluding information such
+      as repeating the navigation, contact info, and more.
+    -->
+    <footer class="footer">
+      <div class="container container--grid">
+        <div class="footer__column">
+          <a href="/" class="footer__logo">
+            <span class="footer__week">Week 9</span>
+            <span class="footer__title">Container Queries</span>
+          </a>
+        </div>
+
+        <div class="footer__column footer__column--legal">
+          <small>
+            Created for
+            <a href="https://mad9013.github.io/f2024/">MAD9013 course</a> and free for any use.
+          </small>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Accessibility feature: return to top button -->
+    <a href="#page" class="to-top">To Top</a>
+
+    <!--
+      Adds a layer when the mobile navigation is open that
+      allows users to click to the side and auto close the nav
+    -->
+    <div class="click-to-close"></div>
+
+    <!-- Loads custom JavaScript file -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>

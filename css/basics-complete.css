@@ -1,0 +1,136 @@
+:where(.media-query, .container-query) .box-wrap--one {
+  max-width: 20rem;
+}
+
+:where(.media-query, .container-query) .box-wrap--two {
+  max-width: 30rem;
+}
+
+:where(.media-query, .container-query) .box-wrap--three {
+  max-width: 40rem;
+}
+
+:where(.media-query, .container-query) .box-wrap--four {
+  max-width: 50rem;
+}
+
+/* ---------- Media Queries ---------- */
+
+@media only screen and (min-width: 25em) {
+  .media-query .box {
+    border-color: var(--color-blue--dark);
+    background-color: var(--color-blue);
+    color: #fff;
+  }
+}
+
+@media only screen and (min-width: 35em) {
+  .media-query .box {
+    border-color: var(--color-red--dark);
+    background-color: var(--color-red);
+    color: var(--color-primary);
+  }
+}
+
+@media only screen and (min-width: 45em) {
+  .media-query .box {
+    border-color: var(--color-purple--dark);
+    background-color: var(--color-purple);
+  }
+}
+
+@media only screen and (min-width: 55em) {
+  .media-query .box {
+    border-color: var(--color-orange--dark);
+    background-color: var(--color-orange);
+  }
+}
+
+/* ---------- Container Queries ---------- */
+
+.container-query .box-wrap {
+  container-type: inline-size;
+}
+
+@container (min-width: 25em) {
+  .container-query .box {
+    border-color: var(--color-blue--dark);
+    background-color: var(--color-blue);
+    color: #fff;
+  }
+}
+
+@container (min-width: 35em) {
+  .container-query .box {
+    border-color: var(--color-red--dark);
+    background-color: var(--color-red);
+    color: var(--color-primary);
+  }
+}
+
+@container (min-width: 45em) {
+  .container-query .box {
+    border-color: var(--color-purple--dark);
+    background-color: var(--color-purple);
+  }
+}
+
+@container (min-width: 55em) {
+  .container-query .box {
+    border-color: var(--color-orange--dark);
+    background-color: var(--color-orange);
+  }
+}
+
+/* ---------- Subscribe example ---------- */
+
+.subscribe-example .container {
+  display: grid;
+  gap: 1.5rem;
+  container-name: outer;
+  container-type: inline-size;
+}
+
+@media only screen and (min-width: 45em) {
+  .subscribe-example .container {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.content,
+.sidebar {
+  container-type: inline-size;
+}
+
+.subscribe {
+  padding: 1.5rem;
+  background-color: var(--color-green--lighter);
+  border-radius: var(--radius);
+  margin-block-end: 1.5rem;
+}
+
+.subscribe .subscribe__title {
+  font-size: 1.5rem;
+}
+
+@container (min-width: 30em) {
+  .subscribe {
+    background-color: var(--color-red);
+    color: #fff;
+  }
+
+  .subscribe .subscribe__title {
+    font-size: 2.5rem;
+    color: #fff;
+  }
+}
+
+@container outer (min-width: 50em) {
+  .subscribe {
+    background-color: var(--color-purple);
+  }
+
+  .subscribe .subscribe__title {
+    color: #fff;
+  }
+}

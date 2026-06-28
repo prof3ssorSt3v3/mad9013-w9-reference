@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Ensures that the text characters are displayed properly -->
+    <meta charset="UTF-8" />
+
+    <!-- Properly sizes content across different browser window sizes -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--
+      The site title displayed in the browser tab.
+      Also used for Search Engine Optimization (SEO),
+      Google results, and accessibility tools/screen readers.
+    -->
+    <title>W9 - Container Queries, a Game Changer</title>
+
+    <!-- Loads fonts from Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <!-- Loads custom supporting CSS stylesheet(s) -->
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <!-- Loads Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" />
+  </head>
+  <body id="page">
+    <!--
+      Accessibility feature that allows users to
+      quickly skip to key areas on the page.
+    -->
+    <ul class="skip-links">
+      <li>
+        <a class="skip-links__link" href="#nav">Skip to site navigation</a>
+      </li>
+      <li>
+        <a class="skip-links__link" href="#main">Skip to main content</a>
+      </li>
+    </ul>
+
+    <!--
+      Main site header. Features our site logo and navigation.
+    -->
+    <header class="navbar navbar--tall">
+      <div class="container">
+        <h1 class="navbar__headline">
+          <a href="/" class="navbar__logo">
+            <span class="navbar__week">Week 9</span>
+            <span class="navbar__title"> Container Queries, a&nbsp;Game Changer </span>
+          </a>
+        </h1>
+        <button class="navbar__toggle" aria-label="Click to open mobile navigation">
+          <span class="navbar__tog navbar__tog--top"></span>
+          <span class="navbar__tog navbar__tog--middle"></span>
+          <span class="navbar__tog navbar__tog--bottom"></span>
+        </button>
+        <nav id="nav" class="navbar__nav">
+          <ul class="navbar__list">
+            <li>
+              <a href="./basics.html" class="navbar__link">Basics</a>
+            </li>
+            <li>
+              <a href="./flex-and-grid.html" class="navbar__link"> Flex & Grid </a>
+            </li>
+            <li>
+              <a href="./container-units.html" class="navbar__link"> Container Units </a>
+            </li>
+            <li>
+              <a href="./layouts.html" class="navbar__link"> Layouts </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!--
+      The main contains ALL of the content unique to this page.
+      Every page MUST have exactly one `main` that is a direct child of `body`.
+    -->
+    <main id="main">
+      <section class="topic-list">
+        <div class="container">
+          <h2>Topics</h2>
+          <ol class="topic-list__list">
+            <li>
+              <a href="./basics.html" class="topic-list__link">
+                <h3 class="topic-list__heading">Basics</h3>
+                <p class="topic-list__desc">Let's explore the basics of apply different styles based on the size of an element.</p>
+              </a>
+            </li>
+            <li>
+              <a href="./flex-and-grid.html" class="topic-list__link">
+                <h3 class="topic-list__heading">Flex &amp; Grid</h3>
+                <p class="topic-list__desc">When using container queries inside of flex and grid, there are some quirks we need to be aware of and plan for.</p>
+              </a>
+            </li>
+            <li>
+              <a href="./container-units.html" class="topic-list__link">
+                <h3 class="topic-list__heading">Container Units</h3>
+                <p class="topic-list__desc">Container Queries come with brand new units that allow us to set values based on our container size.</p>
+              </a>
+            </li>
+            <li>
+              <a href="./layouts.html" class="topic-list__link">
+                <h3 class="topic-list__heading">Layouts</h3>
+                <p class="topic-list__desc">Together let's explore some practical layouts and how container queries can work with them.</p>
+              </a>
+            </li>
+          </ol>
+        </div>
+      </section>
+    </main>
+
+    <!--
+      Site footer. Contains site logo and legal info.
+      
+      Could also contain other concluding information such
+      as repeating the navigation, contact info, and more.
+    -->
+    <footer class="footer">
+      <div class="container container--grid">
+        <div class="footer__column">
+          <a href="/" class="footer__logo">
+            <span class="footer__week">Week 9</span>
+            <span class="footer__title">Container Queries</span>
+          </a>
+        </div>
+
+        <div class="footer__column footer__column--legal">
+          <small>
+            Created for
+            <a href="https://mad9013.github.io/f2024/">MAD9013 course</a> and free for any use.
+          </small>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Accessibility feature: return to top button -->
+    <a href="#page" class="to-top">To Top</a>
+
+    <!--
+      Adds a layer when the mobile navigation is open that
+      allows users to click to the side and auto close the nav
+    -->
+    <div class="click-to-close"></div>
+
+    <!-- Loads custom JavaScript file -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>

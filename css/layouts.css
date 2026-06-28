@@ -1,0 +1,295 @@
+.hero {
+  min-height: 40vh;
+  padding-block: 3rem;
+  display: flex;
+  align-items: end;
+  background-color: #777;
+  background-image: url("https://placedog.net/2500/1500?random");
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  color: #fff;
+}
+
+.hero__title,
+.hero__byline {
+  margin: 0;
+}
+
+.article__body {
+  padding-block: 3rem;
+
+  img {
+    width: 100%;
+  }
+}
+
+.article__footer {
+  border-block-start: 0.0625rem solid var(--color-green);
+  padding-block-start: 0.75rem;
+}
+
+/* Related Articles */
+
+.related-articles__grid {
+  display: grid;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* ---------- Card Styles ---------- */
+
+.card {
+  display: block;
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: var(--color-primary);
+  transition: all var(--transition);
+}
+
+.card__content {
+  padding: 1rem;
+}
+
+/* ---------- Dashboard ---------- */
+
+.dashboard {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  background-color: var(--color-green--lighter);
+  min-height: 80vh;
+}
+
+.dashboard__sidebar {
+  width: 4rem;
+  transition: width var(--transition);
+  background-color: var(--color-primary);
+  display: grid;
+  gap: 1.5rem;
+  grid-template-rows: auto auto 1fr;
+}
+
+.dashboard__sidebar.open {
+  width: 15rem;
+}
+
+.dashboard__profile img {
+  --width: min(calc(100% - 1.5rem), 10rem);
+  margin: 0 auto;
+}
+
+.dashboard__nav ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.dashboard__sidebar .icon {
+  gap: 0;
+  width: 100%;
+
+  cursor: pointer;
+  text-decoration: none;
+  text-align: left;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  color: #fff;
+}
+
+.dashboard__sidebar .icon:where(:hover, :focus-visible) {
+  background-color: var(--color-primary--light);
+}
+
+.dashboard__sidebar .icon i {
+  width: 4rem;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width var(--transition);
+  font-size: 1.25rem;
+}
+
+.dashboard__expander.icon {
+  background-color: var(--color-blue);
+}
+
+.dashboard__expander.icon:where(:hover, :focus) {
+  background-color: var(--color-blue--dark);
+}
+
+.dashboard__grid {
+  padding: 1.5rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-areas:
+    "chats"
+    "groups"
+    "calendar";
+  align-items: start;
+}
+
+.dashboard__unit {
+  background-color: #fff;
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  box-shadow: var(--shadow);
+}
+
+.dashboard__title {
+  margin-block-end: 0.75rem;
+}
+
+/* ---------- Chats ---------- */
+
+.chats {
+  grid-area: chats;
+}
+
+.chats__list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.chats__item {
+  display: flex;
+  /* grid-template-columns: 3rem 1fr auto; */
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--color-primary);
+  padding: 0.5rem;
+  border-radius: var(--radius);
+}
+
+.chats__item--unread {
+  background-color: var(--color-blue--lighter);
+}
+
+.chats__item:where(:hover, :focus) {
+  background-color: #f2f2f2;
+}
+
+.chats__image,
+.chats__info {
+  flex-shrink: 0;
+}
+
+.chats__content {
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.chats__name {
+  margin-block-end: 0;
+  color: var(--color-primary);
+}
+
+.chats__text {
+  margin: 0;
+}
+
+.chats__item--unread:where(:hover, :focus) {
+  background-color: var(--color-blue--light);
+}
+
+.chats__item--unread :where(.chats__name, .chats__info) {
+  color: var(--color-blue);
+}
+
+/* ---------- Groups ---------- */
+
+.groups {
+  grid-area: groups;
+}
+
+.groups__list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.groups__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--color-primary);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+}
+
+.groups__item:where(:hover, :focus) {
+  background-color: #f2f2f2;
+}
+
+.groups__image img {
+  --width: min(calc(100% - 3rem), 7.5rem);
+  margin: 0 auto;
+}
+
+.groups__name {
+  font-size: clamp(1.125rem, 3cqi, 1.333rem);
+  margin-block-end: 0;
+  color: var(--color-primary);
+}
+
+.groups__description {
+  margin: 0;
+}
+
+/* ---------- Calendar ---------- */
+
+.calendar {
+  grid-area: calendar;
+}
+
+.calendar__list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.calendar__list li {
+  flex: 1;
+  display: flex;
+}
+
+.calendar__item {
+  display: block;
+  background-color: var(--color-green--light);
+  border-radius: var(--radius);
+  border: 0.125rem solid var(--color-green);
+  text-decoration: none;
+  color: var(--color-primary);
+  padding: 0.75rem;
+  width: 100%;
+}
+
+.calendar__item--highlighted {
+  background-color: var(--color-blue--light);
+  border-color: var(--color-blue);
+}
+
+.calendar__label {
+  font-size: clamp(1.125rem, 3cqi, 1.333rem);
+  margin-block-end: 0.75rem;
+  color: var(--color-primary);
+}

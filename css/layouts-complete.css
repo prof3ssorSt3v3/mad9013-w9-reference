@@ -1,0 +1,401 @@
+.hero {
+  min-height: 40vh;
+  padding-block: 3rem;
+  display: flex;
+  align-items: end;
+  background-color: #777;
+  background-image: url("https://placedog.net/2500/1500?random");
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  color: #fff;
+}
+
+.hero__title,
+.hero__byline {
+  margin: 0;
+}
+
+.article__body {
+  padding-block: 3rem;
+  /* ---------- prof comment ----------
+  
+  This container is referenced by the
+  .article__content ,.article__footer,
+  and .article__sidebar to determine the
+  layout of the page.
+  
+  ---------- end prof comment ---------- */
+  container: body / inline-size;
+
+  img {
+    width: 100%;
+  }
+}
+
+.article__footer {
+  border-block-start: 0.0625rem solid var(--color-green);
+  padding-block-start: 0.75rem;
+}
+
+.article__sidebar {
+  /* ---------- prof comment ----------
+  
+  This container is referenced by the
+  .related-articles__grid to determine
+  the number of columns it should have
+  and by the .related-articles__title to
+  determine font-size using cqi units.
+  
+  ---------- end prof comment ---------- */
+  container: sidebar / inline-size;
+}
+
+@container body (min-width: 60rem) {
+  .article__body .article__content,
+  .article__body .article__footer {
+    grid-column: span 8;
+  }
+
+  .article__body .article__sidebar {
+    grid-column: 9 / span 4;
+    grid-row: 1 / 3;
+  }
+}
+
+/* Related Articles */
+
+.related-articles__grid {
+  display: grid;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@container sidebar (min-width: 45em) {
+  .related-articles__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.related-articles__title {
+  font-size: clamp(1.602rem, 7.5cqi, 4.209rem);
+}
+
+.related-articles__grid .col {
+  /*
+  this one is needed to set the font-size
+  of the .card__title with cqi units
+  */
+  container: column / inline-size;
+}
+
+/* ---------- Card Styles ---------- */
+
+.card {
+  display: block;
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: var(--color-primary);
+  transition: all var(--transition);
+}
+
+.card__content {
+  padding: 1rem;
+}
+
+.card__title {
+  font-size: clamp(1.424rem, 5cqi, 2.369rem);
+}
+
+/* ---------- Dashboard ---------- */
+
+.dashboard {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  background-color: var(--color-green--lighter);
+  min-height: 80vh;
+}
+
+.dashboard__sidebar {
+  width: 4rem;
+  transition: width var(--transition);
+  background-color: var(--color-primary);
+  display: grid;
+  gap: 1.5rem;
+  grid-template-rows: auto auto 1fr;
+  container: sidebar / inline-size;
+}
+
+.dashboard__sidebar.open {
+  width: 15rem;
+}
+
+.dashboard__profile img {
+  --width: min(calc(100% - 1.5rem), 10rem);
+  margin: 0 auto;
+}
+
+.dashboard__nav ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.dashboard__sidebar .icon {
+  gap: 0;
+  width: 100%;
+
+  cursor: pointer;
+  text-decoration: none;
+  text-align: left;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  color: #fff;
+}
+
+.dashboard__sidebar .icon:where(:hover, :focus-visible) {
+  background-color: var(--color-primary--light);
+}
+
+.dashboard__sidebar .icon i {
+  width: 4rem;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width var(--transition);
+  font-size: 1.25rem;
+}
+
+.dashboard__sidebar .icon__label {
+  display: none;
+}
+
+.dashboard__expander.icon {
+  background-color: var(--color-blue);
+}
+
+.dashboard__expander.icon:where(:hover, :focus) {
+  background-color: var(--color-blue--dark);
+}
+
+@container sidebar (min-width: 10rem) {
+  .dashboard__sidebar .icon__label {
+    display: inline;
+  }
+}
+
+.dashboard__main {
+  container: dashboard__main / inline-size;
+}
+
+.dashboard__grid {
+  padding: 1.5rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-areas:
+    "chats"
+    "groups"
+    "calendar";
+  align-items: start;
+}
+
+@container dashboard__main (min-width: 45em) {
+  .dashboard__grid {
+    grid-template-areas:
+      "chats calendar"
+      "groups calendar";
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+@container dashboard__main (min-width: 55em) {
+  .dashboard__grid {
+    grid-template-columns: 3fr 1fr;
+  }
+}
+
+@container dashboard__main (min-width: 75em) {
+  .dashboard__grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "chats groups"
+      "calendar calendar";
+    align-items: stretch;
+  }
+}
+
+.dashboard__unit {
+  container: dashboard__unit / inline-size;
+  background-color: #fff;
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  box-shadow: var(--shadow);
+}
+
+.dashboard__title {
+  font-size: clamp(1.266rem, 4cqi, 1.777rem);
+  margin-block-end: 0.75rem;
+}
+
+.chats {
+  grid-area: chats;
+}
+
+.chats__list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.chats__item {
+  display: flex;
+  /* grid-template-columns: 3rem 1fr auto; */
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--color-primary);
+  padding: 0.5rem;
+  border-radius: var(--radius);
+}
+
+.chats__item--unread {
+  background-color: var(--color-blue--lighter);
+}
+
+.chats__item:where(:hover, :focus) {
+  background-color: #f2f2f2;
+}
+
+.chats__image,
+.chats__info {
+  flex-shrink: 0;
+}
+
+.chats__content {
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.chats__name {
+  font-size: clamp(1.125rem, 3cqi, 1.333rem);
+  margin-block-end: 0;
+  color: var(--color-primary);
+}
+
+.chats__text {
+  margin: 0;
+}
+
+.chats__item--unread:where(:hover, :focus) {
+  background-color: var(--color-blue--light);
+}
+
+.chats__item--unread :where(.chats__name, .chats__info) {
+  color: var(--color-blue);
+}
+
+.groups {
+  grid-area: groups;
+}
+
+.groups__list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: grid;
+  gap: 0.75rem;
+}
+
+@container dashboard__unit (min-width: 25em) {
+  .groups__list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.groups__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--color-primary);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+}
+
+.groups__item:where(:hover, :focus) {
+  background-color: #f2f2f2;
+}
+
+.groups__image img {
+  --width: min(calc(100% - 3rem), 7.5rem);
+  margin: 0 auto;
+}
+
+.groups__name {
+  font-size: clamp(1.125rem, 3cqi, 1.333rem);
+  margin-block-end: 0;
+  color: var(--color-primary);
+}
+
+.groups__description {
+  margin: 0;
+}
+
+.calendar {
+  grid-area: calendar;
+}
+
+.calendar__list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.calendar__list li {
+  container-type: inline-size;
+  flex: 1;
+  display: flex;
+}
+
+.calendar__item {
+  display: block;
+  background-color: var(--color-green--light);
+  border-radius: var(--radius);
+  border: 0.125rem solid var(--color-green);
+  text-decoration: none;
+  color: var(--color-primary);
+  padding: 0.75rem;
+  width: 100%;
+}
+
+.calendar__item--highlighted {
+  background-color: var(--color-blue--light);
+  border-color: var(--color-blue);
+}
+
+.calendar__label {
+  font-size: clamp(1.125rem, 3cqi, 1.333rem);
+  margin-block-end: 0.75rem;
+  color: var(--color-primary);
+}
+
+@container dashboard__unit (min-width: 30em) {
+  .calendar__list {
+    flex-direction: unset;
+  }
+}
